@@ -30,9 +30,10 @@ public class MyServerSocket extends ServerSocket {
     public MySocket accept() {
         try {
             connect = true;
-            return new MySocket(super.accept())
+            return new MySocket(super.accept());
         } catch (IOException ex) {
             ex.printStackTrace();
+            return null;
         }
     }
 
