@@ -8,8 +8,11 @@ import java.net.Socket;
 public class MySocket extends Socket {
 
     public Socket sc;
+    // Variable per llegir
     public BufferedReader read;
+    // Variable per escriure
     public PrintWriter write;
+    // Variable per guardar el nom del socket
     public String nick;
 
     // Constructor basic que crea un socket per defecte sense conectar
