@@ -14,6 +14,8 @@ public class MySocket extends Socket {
     public PrintWriter write;
     // Variable per guardar el nom del socket
     public String nick;
+    // Varibale que guarda el port al que es conecta el socket
+    int port;
 
     // Constructor basic que crea un socket per defecte sense conectar
     public MySocket(Socket socket) {
@@ -31,6 +33,7 @@ public class MySocket extends Socket {
     public MySocket(String nick, String host, int port) {
         try {
             this.nick = nick;
+            this.port = port;
             sc = new Socket(host, port);
             this.read = new BufferedReader(new InputStreamReader(sc.getInputStream()));
             this.write = new PrintWriter(new OutputStreamWriter(sc.getOutputStream()));
@@ -47,6 +50,11 @@ public class MySocket extends Socket {
     // Funció per escollir el nom del socket
     public void setNick(String nick){
         this.nick = nick;
+    }
+
+    // Funció que retorna el port al que esta conectat el socket
+    public int getPort(){
+        return this.port;
     }
 
     // Funció que llegirá una linea de caràcters
