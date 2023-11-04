@@ -42,6 +42,10 @@ public class MySocket extends Socket {
         }
     }
 
+    public Socket getSocket(){
+        return this.sc;
+    }
+
     // Fucnió per obtenir el nom del socket
     public String getNick(){
         return nick;
