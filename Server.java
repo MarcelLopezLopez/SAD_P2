@@ -20,6 +20,7 @@ public class Server {
             myServerSocket = new MyServerSocket(PORT);
 
             while (true) {
+                // Esperem la següent conexió del client
                 MySocket client = myServerSocket.accept();
                 // Demanem al client que introdueixi un nom i validem si ja existeix
                 while (!nomValid) {
