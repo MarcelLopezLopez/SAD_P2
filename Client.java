@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Client {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // args[0] fara que agafem el primer parametre que li pasem despres d'executar
         // el programa
         // nick //host //port
@@ -26,6 +26,7 @@ public class Client {
                     sc.printLine("\u001b[0m");
                     sc.printLine(line);
                 }
+
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

@@ -18,19 +18,19 @@ public class MySocket extends Socket {
     int port;
 
     // Constructor basic que crea un socket per defecte sense conectar
-    public MySocket(Socket socket) {
+    public MySocket(Socket socket) throws IOException {
         try {
             this.sc = socket;
             this.read = new BufferedReader(new InputStreamReader(sc.getInputStream()));
             this.write = new PrintWriter(new OutputStreamWriter(sc.getOutputStream()));
         } catch (IOException ex) {
-            ex.printStackTrace();
+            throw new IOException("Error al inicializar MySocket", ex);
         }
 
     }
 
     // Constructor que crea un socket amb un nick i definint a qui es vol conectar
-    public MySocket(String nick, String host, int port) {
+    public MySocket(String nick, String host, int port) throws IOException {
         try {
             this.nick = nick;
             this.port = port;
@@ -38,7 +38,7 @@ public class MySocket extends Socket {
             this.read = new BufferedReader(new InputStreamReader(sc.getInputStream()));
             this.write = new PrintWriter(new OutputStreamWriter(sc.getOutputStream()));
         } catch (IOException ex) {
-            ex.printStackTrace();
+            throw new IOException("Error al inicializar MySocket", ex);
         }
     }
 
